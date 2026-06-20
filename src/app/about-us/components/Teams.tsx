@@ -13,23 +13,25 @@ export default function Teams({ teams, members }: TeamsProps) {
 	const [activeTab, updateActiveTab] = useState(0);
 
 	return (
-		<div className="w-full self-center">
-			{/* Tabs */}
-			<div className="flex flex-nowrap overflow-x-auto rounded-t-sm justify-start md:justify-center bg-[#1a1942] px-2 py-2 no-scrollbar">
-				{teams.map((team, i) => (
-					<TeamTab
-						teamIndex={i}
-						activeIndex={activeTab}
-						handleClick={updateActiveTab}
-						key={i}
-					>
-						{team.name}
-					</TeamTab>
-				))}
-			</div>
+		<div className="w-full">
+			{/* Tabs — only show when there are multiple teams */}
+			{teams.length > 1 && (
+				<div className="flex flex-nowrap overflow-x-auto justify-center gap-2 mb-10 no-scrollbar">
+					{teams.map((team, i) => (
+						<TeamTab
+							teamIndex={i}
+							activeIndex={activeTab}
+							handleClick={updateActiveTab}
+							key={i}
+						>
+							{team.name}
+						</TeamTab>
+					))}
+				</div>
+			)}
 
-			{/* Members */}
-			<div className="flex flex-wrap justify-center gap-6 rounded-b-sm bg-[#2a2956] p-6">
+			{/* Members grid */}
+			<div className="flex flex-wrap justify-center gap-8 md:gap-12">
 				{teams[activeTab].memberIndices.map((memberIndex, i) => (
 					<Avatar
 						member={members[memberIndex]}
@@ -57,10 +59,10 @@ function TeamTab({
 	const isActive = teamIndex === activeIndex;
 	return (
 		<button
-			className={`mx-1 shrink-0 rounded-md px-4 py-2 font-bold md:text-base font-anaheim transition-colors duration-300 ${
+			className={`shrink-0 rounded-full px-5 py-1.5 font-anaheim text-sm md:text-base transition-all duration-200 ${
 				isActive
-					? "bg-[#2a2956] text-white shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
-					: "text-[#FFBD52] hover:text-[#FFBD52]"
+					? "bg-[#FF76FE]/20 text-[#FF76FE] ring-1 ring-[#FF76FE]/50"
+					: "text-white/50 hover:text-white/80"
 			}`}
 			onClick={() => handleClick(teamIndex)}
 		>

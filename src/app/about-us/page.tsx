@@ -6,9 +6,18 @@ import type * as aboutUsTypes from "./types";
 
 const members: aboutUsTypes.member[] = [
 	{
-		name: "Gabby",
-		img: "/team/gabby.jpg",
-		link: "https://www.linkedin.com/in/gabriella-brown-acv/",
+		name: "Josue",
+		img: "/team/josue.png",
+	},
+	{
+		name: "Bahara",
+		img: "/team/bahara.png",
+		link: "https://www.linkedin.com/in/bahara-mehry-517510300/",
+	},
+	{
+		name: "Dev",
+		img: "/team/dev.png",
+		link: "https://www.linkedin.com/in/gohildev/",
 	},
 	{
 		name: "Louella",
@@ -54,11 +63,6 @@ const members: aboutUsTypes.member[] = [
 		name: "Said",
 		img: "/team/said.jpeg",
 		link: "https://www.linkedin.com/in/saidmasbahullahsf/",
-	},
-	{
-		name: "Bahara",
-		img: "/team/bahara.jpg",
-		link: "https://www.linkedin.com/in/bahara-mehry-517510300/",
 	},
 	{
 		name: "Kareem",
@@ -134,7 +138,9 @@ const members: aboutUsTypes.member[] = [
 ];
 
 enum membersEnum {
-	Gabby,
+	Josue,
+	Bahara,
+	Dev,
 	Louella,
 	Hillary,
 	Ria,
@@ -144,7 +150,6 @@ enum membersEnum {
 	Grishma,
 	John,
 	Said,
-	Bahara,
 	Kareem,
 	Cecil,
 	Hiro,
@@ -164,101 +169,54 @@ enum membersEnum {
 
 const teams: aboutUsTypes.team[] = [
 	{
-		name: "Design",
-		memberIndices: [
-			membersEnum.Gabby,
-			membersEnum.Louella,
-			membersEnum.Hillary,
-			membersEnum.Cecil,
-			membersEnum.Hiro,
-			membersEnum.Tin,
-		],
-	},
-	{
-		name: "Engagement",
-		memberIndices: [membersEnum.Bahara],
-	},
-	{
 		name: "Executive",
-		memberIndices: [
-			membersEnum.Ria,
-			membersEnum.Gavin,
-			membersEnum.Akim,
-			membersEnum.Sophia,
-			membersEnum.Om,
-		],
-	},
-	{
-		name: "Logistics",
-		memberIndices: [
-			membersEnum.Palak,
-			membersEnum.Kunj,
-			membersEnum.Krrish,
-			membersEnum.Grishma,
-			membersEnum.Hemasri,
-		],
-	},
-	{
-		name: "Marketing",
-		memberIndices: [membersEnum.Aaryan],
-	},
-	{
-		name: "Outreach",
-		memberIndices: [
-			membersEnum.Om,
-			membersEnum.Said,
-			membersEnum.Kareem,
-			membersEnum.Arpan,
-			membersEnum.Atiksha,
-		],
-	},
-	{
-		name: "Publicity",
-		memberIndices: [membersEnum.Jim],
-	},
-	{
-		name: "Tech",
-		memberIndices: [membersEnum.John, membersEnum.Rohith, membersEnum.Vireak],
+		memberIndices: [membersEnum.Josue, membersEnum.Bahara, membersEnum.Dev],
 	},
 ];
 
 export default function Page() {
 	return (
-		<main className="w-full px-6 md:px-8 py-10 space-y-12">
-			<div className="mx-auto w-full max-w-6xl">
-				<h1 className="text-center font-audiowide text-3xl md:text-4xl text-[#FFBD52]">
+		<main className="w-full">
+			{/* Hero image — full width with gradient fade */}
+			<div className="relative w-full h-[320px] md:h-[420px] lg:h-[480px]">
+				<Image
+					src="/team/sfhacks_team.jpg"
+					alt="SF Hacks Team"
+					fill
+					sizes="100vw"
+					className="object-cover object-top"
+					priority
+				/>
+				{/* gradient fades into page background */}
+				<div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171324]" />
+			</div>
+
+			{/* Content — floats below the faded image */}
+			<div className="mx-auto w-full max-w-4xl px-6 md:px-8 -mt-16 md:-mt-24 relative z-10">
+				{/* Title */}
+				<h1 className="text-center font-audiowide text-3xl md:text-4xl text-[#FFBD52] drop-shadow-[0_0_20px_rgba(255,189,82,0.4)]">
 					About Us
 				</h1>
 
-				<section className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8 min-w-0">
-					<div className="md:flex-1 w-full min-w-0 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-						<div className="relative flex-none w-full h-[260px] min-h-[260px] md:h-[320px]">
-							<Image
-								src="/team/sfhacks_team.jpg"
-								alt="Team"
-								fill
-								sizes="(max-width: 768px) 100vw, 50vw"
-								className="object-cover"
-								priority
-							/>
-						</div>
-					</div>
+				{/* Description */}
+				<p className="mt-5 text-center text-[#E6E7FF]/70 leading-7 text-base md:text-lg max-w-2xl mx-auto">
+					SF Hacks is more than just an event — we&apos;re a team of passionate
+					individuals dedicated to hosting San Francisco State&apos;s premier
+					hackathon. Our team spans logistics, design, tech, social engagement,
+					marketing, and outreach.
+				</p>
 
-					{/* right text box */}
-					<div className="md:flex-1 w-full min-w-0 rounded-sm border border-white/10 bg-[#1a1942] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
-						<p className="text-2xl font-medium text-[#FFBD52] mb-3 font-audiowide">
-							Meet Our Team
-						</p>
-						<p className="text-[#E6E7FF]/90 leading-7">
-							SF Hacks is more than just an event, we are a team of passionate
-							individuals dedicated to hosting this hackathon. Our diverse team
-							spans across logistics, design, tech operations, social
-							engagement, marketing, and outreach.
-						</p>
-					</div>
-				</section>
+				{/* Divider */}
+				<div className="mt-10 flex items-center gap-4">
+					<div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/10" />
+					<span className="font-anaheim text-[#FF76FE] text-sm tracking-widest uppercase">
+						Executive Team
+					</span>
+					<div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/10" />
+				</div>
 
-				<section className="mt-10">
+				{/* Team members */}
+				<section className="mt-10 pb-16">
 					<Teams
 						teams={teams}
 						members={members}

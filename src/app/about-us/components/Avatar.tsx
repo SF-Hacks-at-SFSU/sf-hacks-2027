@@ -23,22 +23,20 @@ export default function Avatar({ member }: AvatarProps) {
 		: undefined;
 
 	const content = (
-		<div className="bg-white/5 rounded-2xl overflow-hidden shadow-md flex flex-col items-center w-40 md:w-44 transition-transform duration-150 hover:scale-[1.03]">
-			<div className="relative w-full h-48 md:h-56 overflow-hidden">
+		<div className="flex flex-col items-center gap-2.5 group">
+			<div className="relative w-28 h-28 md:w-42 md:h-42 rounded-full overflow-hidden ring-2 ring-white/10 transition-all duration-300 group-hover:ring-[#FF76FE]/60 group-hover:shadow-[0_0_20px_rgba(255,118,254,0.3)]">
 				<Image
 					src={imgSrc}
 					alt={member.name}
 					fill
-					className="object-cover"
-					sizes="(max-width: 640px) 10rem, (max-width: 768px) 11rem, 12rem"
+					className="object-cover transition-transform duration-300 group-hover:scale-105"
+					sizes="(max-width: 640px) 7rem, 8rem"
 					loading="lazy"
 				/>
 			</div>
-			<div className="w-full py-3 text-center">
-				<div className="font-anaheim text-[15px] md:text-base tracking-wide text-[#E6E7FF]">
-					{member.name}
-				</div>
-			</div>
+			<span className="font-anaheim text-sm md:text-[15px] tracking-wide text-[#E6E7FF]/80 group-hover:text-white transition-colors duration-200">
+				{member.name}
+			</span>
 		</div>
 	);
 

@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-const eventCheckInDateTime = new Date("Feb 01, 2026 14:00:00-07:00");
+const eventCheckInDateTime = new Date("Feb 01, 2027 14:00:00-07:00");
 const eventStartDateTime = new Date("Apr 4, 2025 16:00:00-07:00"); // NOTE: This is not the precise date, The day is the 1st just to avoid parsing error
-const eventEndDateTime = new Date("Feb 01, 2026 16:00:00-07:00");
+const eventEndDateTime = new Date("Feb 01, 2027 16:00:00-07:00");
 
 const dateFormat = new Intl.DateTimeFormat(
 	undefined,
