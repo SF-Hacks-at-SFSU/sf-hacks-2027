@@ -183,7 +183,7 @@ function SkylineSVG() {
 				left: 0,
 				right: 0,
 				bottom: 0,
-				height: "64%",
+				height: "54%",
 			}}
 		>
 			<svg
