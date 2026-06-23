@@ -1,5 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
+import { usePathname } from "next/navigation";
+
 export function MLHBanner() {
+	const pathname = usePathname();
+
+	if (pathname === "/" || pathname === "/about-us" || pathname === "/faqs")
+		return null;
+
 	return (
 		<a
 			id="mlh-trust-badge"

@@ -1,16 +1,14 @@
 import "./globals.css";
 import { MLHBanner } from "./globalComponents/MLHBanner";
 import { ReactNode } from "react";
-import Navbar from "./globalComponents/NavBar";
-// Optional: if you’re using fonts
-// import { Anaheim } from "next/font/google";
-// const anaheim = Anaheim({ subsets: ["latin"], weight: ["400", "700"], display: "swap" });
+import ConditionalNavbar from "./globalComponents/ConditionalNavbar";
+import { Analytics } from "@vercel/analytics/next";
+
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const metadata = {
 	title: "SF Hacks 2027",
 	description: "Bigger, Better, with more Air Fryers",
 	icons: {
-		// I honestly don't have a good reason to use ico files here but might as well
 		icon: `${basePath}/favicon.ico`,
 		shortcut: `${basePath}/favicon.ico`,
 		apple: `${basePath}/icon.png`,
@@ -24,22 +22,27 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
-			{/* Add a global class or font variable if needed */}
-			<body
-				className="min-h-screen bg-[#030528] text-white antialiased"
-				style={
-					{
-						// 	// backgroundColor: "var(--background-color-solid)",
-						// 	backgroundSize: "160px",
-						// 	backgroundPosition: "top",
-						// 	backgroundImage: `
-						// url("${basePath}/img/background-grid.png")`,
-					}
-				}
-			>
-				<Navbar></Navbar>
+			<head>
+				<link
+					rel="preconnect"
+					href="https://fonts.googleapis.com"
+				/>
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin=""
+				/>
+				{/* eslint-disable-next-line @next/next/no-page-custom-font */}
+				<link
+					href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=Archivo:wght@400;500;600;700&display=swap"
+					rel="stylesheet"
+				/>
+			</head>
+			<body className="min-h-screen antialiased">
+				<ConditionalNavbar />
 				{children}
-				<MLHBanner></MLHBanner>
+				<MLHBanner />
+				<Analytics />
 			</body>
 		</html>
 	);
