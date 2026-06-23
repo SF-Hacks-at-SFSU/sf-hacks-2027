@@ -18,31 +18,32 @@ interface Member {
 
 const execTeam: Member[] = [
 	{
-		name: "Josue",
+		name: "Josue Cruz",
 		img: "/team/josue.png",
 		link: "https://www.linkedin.com/in/j-crz/",
 	},
 	{
-		name: "Bahara",
+		name: "Bahara Mehry",
 		img: "/team/bahara.png",
 		link: "https://www.linkedin.com/in/bahara-mehry-517510300/",
 	},
 	{
-		name: "Dev",
+		name: "Dev Gohil",
 		img: "/team/dev.png",
 		link: "https://www.linkedin.com/in/gohildev/",
 	},
 	{
-		name: "Rushali",
+		name: "Rushali Patel",
 		img: "/team/rushali.png",
 		link: "https://www.linkedin.com/in/rushalipatel028/",
 	},
 	{
-		name: "Serafim",
-		img: "/team/serafim.jpg",
+		name: "Serafim Sharkov",
+		img: "/team/serafim.JPG",
+		link: "https://www.linkedin.com/in/serafim-sharkov/",
 	},
 	{
-		name: "Abha",
+		name: "Abha Deshpande",
 		img: "/team/abha.jpg",
 		link: "https://www.linkedin.com/in/abha-deshpande-2303b7224/",
 	},
