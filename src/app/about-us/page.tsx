@@ -18,22 +18,16 @@ interface Member {
 
 const execTeam: Member[] = [
 	{
-		name: "Josue Cruz",
-		img: "/team/josue.png",
-		link: "https://www.linkedin.com/in/j-crz/",
-		role: "Outreach Chair",
-	},
-	{
 		name: "Bahara Mehry",
 		img: "/team/bahara.png",
 		link: "https://www.linkedin.com/in/bahara-mehry-517510300/",
 		role: "President",
 	},
 	{
-		name: "Dev Gohil",
-		img: "/team/dev.png",
-		link: "https://www.linkedin.com/in/gohildev/",
-		role: "Tech Lead",
+		name: "Abha Deshpande",
+		img: "/team/abha.jpg",
+		link: "https://www.linkedin.com/in/abha-deshpande-2303b7224/",
+		role: "Vice President",
 	},
 	{
 		name: "Rushali Patel",
@@ -42,16 +36,22 @@ const execTeam: Member[] = [
 		role: "Director",
 	},
 	{
+		name: "Dev Gohil",
+		img: "/team/dev.png",
+		link: "https://www.linkedin.com/in/gohildev/",
+		role: "Tech Lead",
+	},
+	{
 		name: "Serafim Sharkov",
 		img: "/team/serafim.JPG",
 		link: "https://www.linkedin.com/in/serafim-sharkov/",
-		role: "Treasure",
+		role: "Treasurer",
 	},
 	{
-		name: "Abha Deshpande",
-		img: "/team/abha.jpg",
-		link: "https://www.linkedin.com/in/abha-deshpande-2303b7224/",
-		role: "Vice President",
+		name: "Josue Cruz",
+		img: "/team/josue.png",
+		link: "https://www.linkedin.com/in/j-crz/",
+		role: "Outreach Chair",
 	},
 ];
 
