@@ -8,7 +8,8 @@ import "../styles.css";
 
 const NAV_LINKS = [
 	{ label: "About", href: "/about-us" },
-	{ label: "Sponsors", href: "/sponsors" },
+	// Hidden until the sponsors page is finished
+	// { label: "Sponsors", href: "/sponsors" },
 	{ label: "FAQs", href: "/faqs" },
 ];
 
