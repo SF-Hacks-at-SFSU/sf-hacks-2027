@@ -21,31 +21,37 @@ const execTeam: Member[] = [
 		name: "Josue Cruz",
 		img: "/team/josue.png",
 		link: "https://www.linkedin.com/in/j-crz/",
+		role: "Outreach Chair",
 	},
 	{
 		name: "Bahara Mehry",
 		img: "/team/bahara.png",
 		link: "https://www.linkedin.com/in/bahara-mehry-517510300/",
+		role: "President",
 	},
 	{
 		name: "Dev Gohil",
 		img: "/team/dev.png",
 		link: "https://www.linkedin.com/in/gohildev/",
+		role: "Tech Lead",
 	},
 	{
 		name: "Rushali Patel",
 		img: "/team/rushali.png",
 		link: "https://www.linkedin.com/in/rushalipatel028/",
+		role: "Director",
 	},
 	{
 		name: "Serafim Sharkov",
 		img: "/team/serafim.JPG",
 		link: "https://www.linkedin.com/in/serafim-sharkov/",
+		role: "Treasure",
 	},
 	{
 		name: "Abha Deshpande",
 		img: "/team/abha.jpg",
 		link: "https://www.linkedin.com/in/abha-deshpande-2303b7224/",
+		role: "Vice President",
 	},
 ];
 
@@ -521,19 +527,7 @@ function MemberCard({ member, large }: { member: Member; large?: boolean }) {
 				>
 					{member.name}
 				</div>
-				{member.role ? (
-					<span
-						style={{
-							fontFamily: "'Space Mono', monospace",
-							fontSize: 11,
-							letterSpacing: "0.1em",
-							textTransform: "uppercase" as const,
-							color: "#a8a297",
-						}}
-					>
-						{member.role}
-					</span>
-				) : member.link ? (
+				{member.link ? (
 					<a
 						href={member.link}
 						target="_blank"
@@ -563,7 +557,7 @@ function MemberCard({ member, large }: { member: Member; large?: boolean }) {
 					marginTop: 6,
 				}}
 			>
-				Executive Team
+				{member.role || "Executive Team"}
 			</div>
 		</div>
 	);
@@ -899,7 +893,7 @@ export default function AboutPage() {
 						className="sf-exec-grid"
 						style={{
 							display: "grid",
-							gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+							gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
 							gap: "clamp(28px,4vw,52px)",
 						}}
 					>
@@ -978,7 +972,7 @@ export default function AboutPage() {
 							for organizers, mentors, and judges.
 						</p>
 						<a
-							href="https://discord.gg/P5PsDR6G7W"
+							href="mailto:sfhacksteam@gmail.com"
 							style={{
 								fontFamily: "'Space Mono', monospace",
 								fontWeight: 700,
@@ -992,7 +986,7 @@ export default function AboutPage() {
 								borderRadius: 2,
 							}}
 						>
-							Join our Discord →
+							Email us →
 						</a>
 					</div>
 				</div>

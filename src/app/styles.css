@@ -976,6 +976,13 @@
 }
 
 /* ─── About page responsive ─── */
+/* exec team: 3 cols → 2 cols on tablets */
+@media (max-width: 900px) {
+	.sf-exec-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+}
+
 @media (max-width: 640px) {
 	/* exec team: single column */
 	.sf-exec-grid {
