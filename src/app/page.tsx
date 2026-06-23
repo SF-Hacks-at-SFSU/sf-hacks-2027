@@ -1068,16 +1068,13 @@ export default function Home() {
 
 					<div className="sf-hero__headline-outer">
 						<div className="sf-hero__headline">
-							<p className="sf-hero__eyebrow">
-								Feb 2027&nbsp;<span aria-hidden="true">·</span>&nbsp;Student
-								Life Event Center / Annex
-							</p>
 							<h1 className="sf-hero__title">
 								<span>SF&nbsp;Hacks</span>
 								<span>2027</span>
 							</h1>
 							<p className="sf-hero__subtitle">
-								San Francisco State University&apos;s annual hackathon
+								Feb 2027&nbsp;<span aria-hidden="true">·</span>&nbsp;San
+								Francisco State University
 							</p>
 							<div className="sf-hero__actions">
 								{/* <a

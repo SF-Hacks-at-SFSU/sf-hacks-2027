@@ -6,7 +6,12 @@ import { usePathname } from "next/navigation";
 export function MLHBanner() {
 	const pathname = usePathname();
 
-	if (pathname === "/" || pathname === "/about-us" || pathname === "/faqs")
+	if (
+		pathname === "/" ||
+		pathname === "/about-us" ||
+		pathname === "/faqs" ||
+		pathname === "/sponsors"
+	)
 		return null;
 
 	return (

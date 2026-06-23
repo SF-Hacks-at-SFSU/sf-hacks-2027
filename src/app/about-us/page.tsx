@@ -969,7 +969,7 @@ export default function AboutPage() {
 							}}
 						>
 							Want to help build SF&nbsp;Hacks 2027? We&apos;re always looking
-							for organizers, mentors, and judges.
+							for sponsors, mentors, and judges.
 						</p>
 						<a
 							href="mailto:sfhacksteam@gmail.com"

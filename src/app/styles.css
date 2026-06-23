@@ -1127,3 +1127,20 @@
 	transform-origin: 50% 62%;
 	will-change: transform;
 }
+
+/* Painted Ladies — drop houses progressively so the rest stay proportioned */
+@media (max-width: 1024px) {
+	.sf-lady--h-lg {
+		display: none !important;
+	}
+}
+@media (max-width: 800px) {
+	.sf-lady--h-md {
+		display: none !important;
+	}
+}
+@media (max-width: 560px) {
+	.sf-lady--h-sm {
+		display: none !important;
+	}
+}
