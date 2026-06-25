@@ -358,6 +358,8 @@
 
 .sf-home-nav__brand {
 	gap: 0.72rem;
+	/* Clear the fixed MLH trust badge pinned to the top-left corner */
+	margin-left: 60px;
 	color: var(--sf-ink);
 	font-family: "Space Mono", monospace;
 	font-size: 1rem;
