@@ -537,64 +537,53 @@ function WindowRow() {
 	);
 }
 
-// Ordered so the big-name companies sit in the top row and the dark/light
-// tiles alternate in a checkerboard pattern (5-col desktop grid).
-const PAST_SPONSORS = [
-	// Row 1 — big companies (light / dark / light / dark / light)
-	{ name: "Meta", src: "/sponsor-logos/current/Meta.svg" },
-	{ name: "IBM", src: "/sponsor-logos/current/IBM.png", dark: true },
-	{ name: "Gilead", src: "/sponsor-logos/current/Gilead.svg" },
-	{
-		name: "BrowserBase",
-		src: "/sponsor-logos/current/BrowserBase.png",
-		dark: true,
-	},
-	{ name: "Fastly", src: "/sponsor-logos/current/Fastly.svg" },
-	// Row 2 — dark / light / dark / light / dark
-	{ name: "Actian", src: "/sponsor-logos/current/Actian.svg", dark: true },
-	{ name: "MedSender", src: "/sponsor-logos/current/MedSender.svg" },
-	{ name: "CodePath", src: "/sponsor-logos/current/CodePath.png", dark: true },
-	{ name: "Jam", src: "/sponsor-logos/current/Jam.png" },
+// Tiered sponsor data — largest to smallest.
+// `dark: true` means the logo art is light/white, so it needs a dark card.
+type Sponsor = { name: string; src: string; dark?: boolean };
+const LOGO_DIR = "/sponsor-logos/updated_logos_spons";
+const SPONSOR_TIER1: Sponsor[] = [
+	{ name: "Meta", src: `${LOGO_DIR}/meta-normalized.png` },
+	{ name: "JFF Ventures", src: `${LOGO_DIR}/jff-ventures-normalized.png` },
+	{ name: "Actian", src: `${LOGO_DIR}/actian-normalized.png` },
+	{ name: "IBM", src: `${LOGO_DIR}/ibm-normalized.png` },
+];
+const SPONSOR_TIER2: Sponsor[] = [
+	{ name: "Gilead", src: `${LOGO_DIR}/gilead-normalized.png` },
+	{ name: "Fastly", src: `${LOGO_DIR}/fastly-normalized.png` },
+];
+const SPONSOR_TIER3: Sponsor[] = [
+	{ name: "BrowserBase", src: `${LOGO_DIR}/browserbase-normalized.png` },
+	{ name: "CodePath", src: `${LOGO_DIR}/codepath-normalized.png` },
 	{
 		name: "Inductive Automation",
-		src: "/sponsor-logos/current/InductiveAutomation.png",
-		dark: true,
+		src: `${LOGO_DIR}/inductive-automation-normalized.png`,
 	},
-	// Row 3 — light / dark / light / dark / light
-	{ name: "OpenMind", src: "/sponsor-logos/current/OpenMind.svg" },
-	{
-		name: "TensorStax",
-		src: "/sponsor-logos/current/TensorStax.svg",
-		dark: true,
-	},
-	{ name: "Shipyard", src: "/sponsor-logos/current/shipyard-sfhacks-logo.png" },
-	{
-		name: "Backboard",
-		src: "/sponsor-logos/current/Backboard.svg",
-		dark: true,
-	},
-	{ name: "Arena Club", src: "/sponsor-logos/current/arenaClub.png" },
-	// Row 4 — dark / light / dark / light / dark
-	{
-		name: "Upstreman",
-		src: "/sponsor-logos/current/Upstreman.svg",
-		dark: true,
-	},
+	{ name: "MedSender", src: `${LOGO_DIR}/medsender-normalized.png` },
+	{ name: "TensorStax", src: `${LOGO_DIR}/tensorstax-normalized.png` },
+];
+const SPONSOR_TIER4: Sponsor[] = [
+	{ name: "Backboard", src: `${LOGO_DIR}/backboard-normalized.png` },
+	{ name: "Upstreman", src: `${LOGO_DIR}/upstreman-normalized.png` },
+	{ name: "OpenMind", src: `${LOGO_DIR}/openmind-normalized.png` },
+	{ name: "Shipyard", src: `${LOGO_DIR}/shipyard-normalized.png` },
+	{ name: "Arena Club", src: `${LOGO_DIR}/arena-club-normalized.png` },
+	{ name: "Broxi", src: `${LOGO_DIR}/broxi-ai-normalized.png` },
 	{
 		name: "Stand Out Stickers",
-		src: "/sponsor-logos/current/stand-out-stickers-logo.png",
+		src: `${LOGO_DIR}/standout-stickers-normalized.png`,
 	},
-	{
-		name: "JFF Ventures",
-		src: "/sponsor-logos/current/JFFVentures1.png",
-		dark: true,
-	},
-	{ name: "Dead Eye", src: "/sponsor-logos/current/DeadEye.png" },
-	{ name: "Broxi", src: "/sponsor-logos/current/broxi.png", dark: true },
-	// Row 5 — light / dark / light
-	{ name: "MLT", src: "/sponsor-logos/current/MLT.png" },
-	{ name: "CoSE", src: "/sponsor-logos/current/CoSE.svg", dark: true },
-	{ name: "ACM", src: "/sponsor-logos/current/ACM.svg" },
+	{ name: "Dead Eye", src: `${LOGO_DIR}/dead-eye-coffee-normalized.png` },
+	{ name: "MLT", src: `${LOGO_DIR}/mlt-normalized.png` },
+	{ name: "ACM", src: `${LOGO_DIR}/acm-normalized.png` },
+	{ name: "CoSE", src: `${LOGO_DIR}/sf-state-cose-normalized.png` },
+];
+
+// Size hierarchy for the sponsor wall — bigger card = higher tier
+const SPONSOR_TIERS = [
+	{ logos: SPONSOR_TIER1, card: 300, pad: 30 },
+	{ logos: SPONSOR_TIER2, card: 280, pad: 28 },
+	{ logos: SPONSOR_TIER3, card: 230, pad: 24 },
+	{ logos: SPONSOR_TIER4, card: 185, pad: 18 },
 ];
 
 export default function SponsorsPage() {
@@ -973,9 +962,9 @@ export default function SponsorsPage() {
 			<section style={{ background: "#FBF8F3" }}>
 				<div
 					style={{
-						maxWidth: 1180,
+						maxWidth: 1280,
 						margin: "0 auto",
-						padding: "clamp(72px,11vw,152px) clamp(20px,5vw,56px)",
+						padding: "clamp(72px,10vw,130px) clamp(24px,5vw,72px)",
 						textAlign: "center",
 					}}
 				>
@@ -984,10 +973,10 @@ export default function SponsorsPage() {
 							fontFamily: "'Space Mono', monospace",
 							fontWeight: 700,
 							fontSize: 11,
-							letterSpacing: "0.16em",
+							letterSpacing: "0.2em",
 							textTransform: "uppercase",
 							color: "var(--sf-accent)",
-							marginBottom: 22,
+							marginBottom: 20,
 						}}
 					>
 						In good company
@@ -996,9 +985,8 @@ export default function SponsorsPage() {
 						style={{
 							fontFamily: "'Instrument Serif', Georgia, serif",
 							fontWeight: 400,
-							fontSize: "clamp(34px,5.4vw,68px)",
-							lineHeight: 1.02,
-							letterSpacing: "-0.01em",
+							fontSize: "clamp(32px,5vw,64px)",
+							lineHeight: 1.05,
 							margin: "0 auto",
 							color: "#211E1A",
 						}}
@@ -1009,56 +997,62 @@ export default function SponsorsPage() {
 						style={{
 							fontFamily: "'Space Mono', monospace",
 							fontSize: 13,
-							lineHeight: 1.6,
-							color: "#6b665e",
-							maxWidth: 420,
-							margin: "20px auto 0",
+							lineHeight: 1.7,
+							color: "#8a837a",
+							maxWidth: 400,
+							margin: "18px auto 0",
 						}}
 					>
 						Companies that backed past SF&nbsp;Hacks builders. Your logo could
 						be next.
 					</p>
+
 					<div
 						style={{
-							display: "grid",
-							gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-							columnGap: "clamp(40px,6vw,88px)",
-							rowGap: "clamp(44px,6vw,72px)",
-							alignItems: "center",
-							justifyItems: "center",
-							marginTop: "clamp(56px,8vw,96px)",
+							background: "#F2F0EA",
+							borderRadius: "1rem",
+							marginTop: "2.5rem",
+							padding: "clamp(28px,5vw,56px) clamp(20px,4vw,40px)",
 						}}
 					>
-						{PAST_SPONSORS.map(({ name, src, dark }) => (
+						{SPONSOR_TIERS.map((tier, ti) => (
 							<div
-								key={name}
+								key={ti}
 								style={{
-									width: "100%",
-									maxWidth: 200,
-									aspectRatio: "5/2",
 									display: "flex",
-									alignItems: "center",
+									flexWrap: "wrap",
+									alignItems: "stretch",
 									justifyContent: "center",
-									background: dark ? "#1a1a1a" : "#fff",
-									border: `1px solid ${dark ? "#333" : "#E4DED2"}`,
-									borderRadius: 4,
-									padding: "12px 20px",
+									gap: "clamp(14px,2vw,24px)",
+									marginTop: ti === 0 ? 0 : "clamp(28px,4vw,52px)",
 								}}
 							>
-								<Image
-									src={src}
-									alt={name}
-									width={160}
-									height={64}
-									style={{
-										objectFit: "contain",
-										width: "100%",
-										height: "100%",
-									}}
-									onError={(e) => {
-										(e.target as HTMLImageElement).style.display = "none";
-									}}
-								/>
+								{tier.logos.map(({ name, src }) => (
+									<div
+										key={name}
+										style={{
+											flex: `0 1 ${tier.card}px`,
+											maxWidth: tier.card,
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "center",
+										}}
+									>
+										<Image
+											src={src}
+											alt={name}
+											width={tier.card}
+											height={Math.round((tier.card * 7) / 16)}
+											style={{
+												objectFit: "contain",
+												width: "100%",
+												height: "auto",
+												maxHeight: Math.round((tier.card * 7) / 16),
+											}}
+											unoptimized
+										/>
+									</div>
+								))}
 							</div>
 						))}
 					</div>
