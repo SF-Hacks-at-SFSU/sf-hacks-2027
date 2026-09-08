@@ -1103,17 +1103,50 @@ export default function Home() {
 			<HomeSections />
 
 			<footer className="sf-footer">
-				<div className="sf-footer__inner">
-					<div className="sf-footer__brand">
-						<Image
-							src="/icon.png"
-							alt="SF Hacks"
-							width={20}
-							height={20}
-						/>
-						<span>SF&nbsp;Hacks&nbsp;2027</span>
+				<div className="sf-footer__cta">
+					<div>
+						<p>February 2027 · San Francisco</p>
+						<h2>Build something worth remembering.</h2>
 					</div>
-					<div className="sf-footer__links">
+					<a
+						href="https://app.sfhacks.io/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Apply to SF Hacks <span aria-hidden="true">→</span>
+					</a>
+				</div>
+
+				<div className="sf-footer__main">
+					<div className="sf-footer__brand">
+						<div>
+							<Image
+								src="/icon.png"
+								alt="SF Hacks"
+								width={36}
+								height={36}
+							/>
+							<span>SF&nbsp;Hacks&nbsp;2027</span>
+						</div>
+						<p>
+							San Francisco State University&apos;s student-run hackathon. Come
+							curious. Leave with something real.
+						</p>
+					</div>
+
+					<nav
+						className="sf-footer__column"
+						aria-label="Footer navigation"
+					>
+						<p>Explore</p>
+						<a href="#home">Home</a>
+						<a href="#about">About</a>
+						<a href="#sponsors">Sponsors</a>
+						<a href="#faqs">FAQs</a>
+					</nav>
+
+					<div className="sf-footer__column">
+						<p>Connect</p>
 						<a
 							href="https://discord.gg/P5PsDR6G7W"
 							target="_blank"
@@ -1128,8 +1161,21 @@ export default function Home() {
 						>
 							Instagram
 						</a>
-						<span className="sf-footer__season">MLH 2026 Season</span>
+						<a href="mailto:sfhacksteam@gmail.com">Email us</a>
 					</div>
+
+					<div className="sf-footer__column sf-footer__details">
+						<p>Event</p>
+						<span>February 2027</span>
+						<span>San Francisco State University</span>
+						<span>1600 Holloway Avenue</span>
+					</div>
+				</div>
+
+				<div className="sf-footer__bottom">
+					<span>© 2027 SF Hacks</span>
+					<span>MLH 2027 Season</span>
+					<a href="#home">Back to top ↑</a>
 				</div>
 			</footer>
 		</main>

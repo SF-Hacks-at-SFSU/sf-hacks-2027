@@ -4,11 +4,36 @@ import Image from "next/image";
 import { useState } from "react";
 
 const team = [
-	{ name: "Bahara Mehry", role: "President", image: "/team/bahara.png" },
-	{ name: "Abha Deshpande", role: "Vice President", image: "/team/abha.jpg" },
-	{ name: "Dev Gohil", role: "Tech Lead", image: "/team/dev.png" },
-	{ name: "Serafim Sharkov", role: "Treasurer", image: "/team/serafim.JPG" },
-	{ name: "Josue Cruz", role: "Outreach Chair", image: "/team/josue.png" },
+	{
+		name: "Bahara Mehry",
+		role: "President",
+		image: "/team/bahara.png",
+		position: "50% 28%",
+	},
+	{
+		name: "Abha Deshpande",
+		role: "Vice President",
+		image: "/team/abha.jpg",
+		position: "50% 24%",
+	},
+	{
+		name: "Dev Gohil",
+		role: "Tech Lead",
+		image: "/team/dev.png",
+		position: "50% 45%",
+	},
+	{
+		name: "Serafim Sharkov",
+		role: "Treasurer",
+		image: "/team/serafim.JPG",
+		position: "50% 38%",
+	},
+	{
+		name: "Josue Cruz",
+		role: "Outreach Chair",
+		image: "/team/josue.png",
+		position: "50% 20%",
+	},
 ];
 
 const sponsorTiers = [
@@ -191,6 +216,7 @@ export default function HomeSections() {
 										alt={member.name}
 										fill
 										sizes="(max-width: 640px) 50vw, 16vw"
+										style={{ objectPosition: member.position }}
 									/>
 								</div>
 								<h4>{member.name}</h4>

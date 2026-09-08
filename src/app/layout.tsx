@@ -1,13 +1,44 @@
 import "./globals.css";
 import { MLHBanner } from "./globalComponents/MLHBanner";
 import { ReactNode } from "react";
+import type { Metadata } from "next";
 import ConditionalNavbar from "./globalComponents/ConditionalNavbar";
 import { Analytics } from "@vercel/analytics/next";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-export const metadata = {
+const socialPreview = "https://www.sfhacks.io/logo-horizontal.png?v=2027";
+
+export const metadata: Metadata = {
+	metadataBase: new URL("https://www.sfhacks.io"),
 	title: "SF Hacks 2027",
-	description: "Bigger, Better, with more Air Fryers",
+	description:
+		"SF Hacks 2027 — San Francisco State University's student-run hackathon.",
+	alternates: {
+		canonical: "/",
+	},
+	openGraph: {
+		type: "website",
+		url: "https://www.sfhacks.io",
+		siteName: "SF Hacks",
+		title: "SF Hacks 2027",
+		description:
+			"Join student builders at San Francisco State University for SF Hacks 2027.",
+		images: [
+			{
+				url: socialPreview,
+				width: 6279,
+				height: 1718,
+				alt: "SF Hacks logo",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "SF Hacks 2027",
+		description:
+			"Join student builders at San Francisco State University for SF Hacks 2027.",
+		images: [socialPreview],
+	},
 	icons: {
 		icon: `${basePath}/favicon.ico`,
 		shortcut: `${basePath}/favicon.ico`,
