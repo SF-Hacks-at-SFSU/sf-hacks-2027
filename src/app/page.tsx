@@ -1080,7 +1080,7 @@ export default function Home() {
 							<div className="sf-hero__actions">
 								<a
 									className="sf-button sf-button--primary"
-									href="https://app.sfhacks.io/"
+									href="https://app.sfhacks.io/events/sfhacks-2027"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -1109,7 +1109,7 @@ export default function Home() {
 						<h2>Build something worth remembering.</h2>
 					</div>
 					<a
-						href="https://app.sfhacks.io/"
+						href="https://app.sfhacks.io/events/sfhacks-2027"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

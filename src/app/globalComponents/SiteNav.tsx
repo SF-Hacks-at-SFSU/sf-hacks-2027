@@ -77,7 +77,7 @@ export default function SiteNav() {
 					))}
 					<a
 						className="sf-home-nav__register"
-						href="https://app.sfhacks.io/"
+						href="https://app.sfhacks.io/events/sfhacks-2027"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -136,7 +136,7 @@ export default function SiteNav() {
 							</a>
 						))}
 						<a
-							href="https://app.sfhacks.io/"
+							href="https://app.sfhacks.io/events/sfhacks-2027"
 							className="sf-nav-drawer__register"
 							target="_blank"
 							rel="noopener noreferrer"
