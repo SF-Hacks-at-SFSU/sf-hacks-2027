@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useRef } from "react";
 import "./styles.css";
 import SiteNav from "./globalComponents/SiteNav";
+import HomeSections from "./components/HomeSections";
 
 const SPLASH_SVG =
 	'<svg viewBox="0 0 150 60" width="100%" height="100%" style="display:block;overflow:visible;">' +
@@ -1077,21 +1078,13 @@ export default function Home() {
 								Francisco State University
 							</p>
 							<div className="sf-hero__actions">
-								{/* <a
+								<a
 									className="sf-button sf-button--primary"
 									href="https://app.sfhacks.io/"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
 									Apply now&nbsp;<span aria-hidden="true">→</span>
-								</a> */}
-								<a
-									className="sf-button sf-button--primary"
-									href="https://tally.so/r/RG2rP4"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Get notified&nbsp;<span aria-hidden="true">→</span>
 								</a>
 								<a
 									className="sf-button sf-button--link"
@@ -1106,6 +1099,8 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+
+			<HomeSections />
 
 			<footer className="sf-footer">
 				<div className="sf-footer__inner">

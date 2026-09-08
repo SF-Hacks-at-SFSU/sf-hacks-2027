@@ -30,12 +30,6 @@ const execTeam: Member[] = [
 		role: "Vice President",
 	},
 	{
-		name: "Rushali Patel",
-		img: "/team/rushali.png",
-		link: "https://www.linkedin.com/in/rushalipatel028/",
-		role: "Director",
-	},
-	{
 		name: "Dev Gohil",
 		img: "/team/dev.png",
 		link: "https://www.linkedin.com/in/gohildev/",

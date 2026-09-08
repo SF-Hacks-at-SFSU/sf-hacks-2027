@@ -1,20 +1,40 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "../styles.css";
 
 const NAV_LINKS = [
-	{ label: "About", href: "/about-us" },
-	{ label: "Sponsors", href: "/sponsors" },
-	{ label: "FAQs", href: "/faqs" },
+	{ label: "About", href: "#about" },
+	{ label: "Sponsors", href: "#sponsors" },
+	{ label: "FAQs", href: "#faqs" },
 ];
 
 export default function SiteNav() {
 	const pathname = usePathname();
 	const [open, setOpen] = useState(false);
+	const [activeSection, setActiveSection] = useState("home");
+
+	useEffect(() => {
+		if (pathname !== "/") return;
+		const sections = ["home", "about", "sponsors", "faqs"]
+			.map((id) => document.getElementById(id))
+			.filter((section): section is HTMLElement => Boolean(section));
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const visible = entries
+					.filter((entry) => entry.isIntersecting)
+					.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+				if (visible?.target.id) setActiveSection(visible.target.id);
+			},
+			{ rootMargin: "-18% 0px -58%", threshold: [0, 0.15, 0.35] }
+		);
+		sections.forEach((section) => observer.observe(section));
+		return () => observer.disconnect();
+	}, [pathname]);
+
+	const sectionHref = (href: string) => (pathname === "/" ? href : `/${href}`);
 
 	return (
 		<>
@@ -22,8 +42,8 @@ export default function SiteNav() {
 				className="sf-home-nav"
 				aria-label="Primary navigation"
 			>
-				<Link
-					href="/"
+				<a
+					href={pathname === "/" ? "#home" : "/#home"}
 					className="sf-home-nav__brand"
 					aria-label="SF Hacks home"
 				>
@@ -34,16 +54,16 @@ export default function SiteNav() {
 						height={24}
 					/>
 					<span>SF&nbsp;Hacks</span>
-				</Link>
+				</a>
 
 				{/* Desktop links */}
 				<div className="sf-home-nav__links">
 					{NAV_LINKS.map(({ label, href }) => (
-						<Link
+						<a
 							key={label}
-							href={href}
+							href={sectionHref(href)}
 							style={
-								pathname === href
+								activeSection === href.slice(1)
 									? {
 											color: "var(--sf-accent)",
 											borderBottom: "1.5px solid var(--sf-accent)",
@@ -53,15 +73,15 @@ export default function SiteNav() {
 							}
 						>
 							{label}
-						</Link>
+						</a>
 					))}
 					<a
 						className="sf-home-nav__register"
-						href="https://tally.so/r/RG2rP4"
+						href="https://app.sfhacks.io/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Get Notified
+						Apply
 					</a>
 				</div>
 
@@ -87,8 +107,8 @@ export default function SiteNav() {
 						className="sf-nav-drawer__inner"
 						onClick={(e) => e.stopPropagation()}
 					>
-						<Link
-							href="/"
+						<a
+							href={pathname === "/" ? "#home" : "/#home"}
 							className="sf-nav-drawer__brand"
 							onClick={() => setOpen(false)}
 						>
@@ -99,28 +119,30 @@ export default function SiteNav() {
 								height={20}
 							/>
 							<span>SF&nbsp;Hacks</span>
-						</Link>
+						</a>
 						{NAV_LINKS.map(({ label, href }) => (
-							<Link
+							<a
 								key={label}
-								href={href}
+								href={sectionHref(href)}
 								className="sf-nav-drawer__link"
 								style={
-									pathname === href ? { color: "var(--sf-accent)" } : undefined
+									activeSection === href.slice(1)
+										? { color: "var(--sf-accent)" }
+										: undefined
 								}
 								onClick={() => setOpen(false)}
 							>
 								{label}
-							</Link>
+							</a>
 						))}
 						<a
-							href="https://tally.so/r/RG2rP4"
+							href="https://app.sfhacks.io/"
 							className="sf-nav-drawer__register"
 							target="_blank"
 							rel="noopener noreferrer"
 							onClick={() => setOpen(false)}
 						>
-							Get Notified
+							Apply
 						</a>
 					</div>
 				</div>
