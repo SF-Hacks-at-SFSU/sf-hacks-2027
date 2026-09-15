@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://www.sfhacks.io"),
 	title: "SF Hacks 2027",
 	description:
-		"SF Hacks 2027 — San Francisco State University's student-run hackathon.",
+		"SF Hacks 2027 — February 19–21 at San Francisco State University.",
 	alternates: {
 		canonical: "/",
 	},
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		siteName: "SF Hacks",
 		title: "SF Hacks 2027",
 		description:
-			"Join student builders at San Francisco State University for SF Hacks 2027.",
+			"Join student builders February 19–21 at San Francisco State University for SF Hacks 2027.",
 		images: [
 			{
 				url: socialPreview,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "SF Hacks 2027",
 		description:
-			"Join student builders at San Francisco State University for SF Hacks 2027.",
+			"Join student builders February 19–21 at San Francisco State University for SF Hacks 2027.",
 		images: [socialPreview],
 	},
 	icons: {

@@ -77,11 +77,11 @@ export default function SiteNav() {
 					))}
 					<a
 						className="sf-home-nav__register"
-						href="https://app.sfhacks.io/events/sfhacks-2027"
+						href="https://tally.so/r/RG2rP4"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Apply
+						Get notified
 					</a>
 				</div>
 
@@ -136,13 +136,13 @@ export default function SiteNav() {
 							</a>
 						))}
 						<a
-							href="https://app.sfhacks.io/events/sfhacks-2027"
+							href="https://tally.so/r/RG2rP4"
 							className="sf-nav-drawer__register"
 							target="_blank"
 							rel="noopener noreferrer"
 							onClick={() => setOpen(false)}
 						>
-							Apply
+							Get notified
 						</a>
 					</div>
 				</div>

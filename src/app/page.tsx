@@ -1074,17 +1074,17 @@ export default function Home() {
 								<span>2027</span>
 							</h1>
 							<p className="sf-hero__subtitle">
-								Feb 2027&nbsp;<span aria-hidden="true">·</span>&nbsp;San
+								Feb 19–21, 2027&nbsp;<span aria-hidden="true">·</span>&nbsp;San
 								Francisco State University
 							</p>
 							<div className="sf-hero__actions">
 								<a
 									className="sf-button sf-button--primary"
-									href="https://app.sfhacks.io/events/sfhacks-2027"
+									href="https://tally.so/r/RG2rP4"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									Apply now&nbsp;<span aria-hidden="true">→</span>
+									Get notified&nbsp;<span aria-hidden="true">→</span>
 								</a>
 								<a
 									className="sf-button sf-button--link"
@@ -1105,15 +1105,15 @@ export default function Home() {
 			<footer className="sf-footer">
 				<div className="sf-footer__cta">
 					<div>
-						<p>February 2027 · San Francisco</p>
+						<p>February 19–21, 2027 · San Francisco</p>
 						<h2>Build something worth remembering.</h2>
 					</div>
 					<a
-						href="https://app.sfhacks.io/events/sfhacks-2027"
+						href="https://tally.so/r/RG2rP4"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Apply to SF Hacks <span aria-hidden="true">→</span>
+						Notify me when applications open <span aria-hidden="true">→</span>
 					</a>
 				</div>
 
@@ -1166,7 +1166,7 @@ export default function Home() {
 
 					<div className="sf-footer__column sf-footer__details">
 						<p>Event</p>
-						<span>February 2027</span>
+						<span>February 19–21, 2027</span>
 						<span>San Francisco State University</span>
 						<span>1600 Holloway Avenue</span>
 					</div>

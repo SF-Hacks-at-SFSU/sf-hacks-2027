@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react";
 
-const eventCheckInDateTime = new Date("Feb 01, 2027 14:00:00-07:00");
-const eventStartDateTime = new Date("Apr 4, 2025 16:00:00-07:00"); // NOTE: This is not the precise date, The day is the 1st just to avoid parsing error
-const eventEndDateTime = new Date("Feb 01, 2027 16:00:00-07:00");
+const eventCheckInDateTime = new Date("2027-02-19T00:00:00-08:00");
+const eventStartDateTime = new Date("2027-02-19T00:00:00-08:00");
+const eventEndDateTime = new Date("2027-02-21T23:59:59-08:00");
 
-const dateFormat = new Intl.DateTimeFormat(
-	undefined,
-	// { dateStyle: "long" } Use this once we have the precise date
-	{ month: "long", year: "numeric" } // Using this date format for now since we don't have the precise date yet
-);
+const dateFormat = new Intl.DateTimeFormat(undefined, {
+	month: "long",
+	day: "numeric",
+	year: "numeric",
+});
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface CountDownProps {

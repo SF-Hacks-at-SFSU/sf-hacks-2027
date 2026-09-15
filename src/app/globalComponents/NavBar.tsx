@@ -14,8 +14,8 @@ const NAV_LINKS = [
 ];
 
 const REGISTER_LINK = {
-	name: "Register",
-	href: "https://app.sfhacks.io/events/sfhacks-2027",
+	name: "Get Notified",
+	href: "https://tally.so/r/RG2rP4",
 };
 
 function NavLink({
