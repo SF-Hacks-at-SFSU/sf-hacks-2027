@@ -23,7 +23,7 @@ const FAQ_DATA: [string, string][] = [
 	],
 	[
 		"Are there travel reimbursements?",
-		"We offer limited travel reimbursements for eligible attendees. Exact amounts and the application open closer to the event, so keep an eye on our Discord for announcements.",
+		"We are not offering travel reimbursements this year. We know travel can be a barrier, so we recommend carpooling with other attendees or connecting on our Discord to coordinate rides.",
 	],
 	[
 		"Do I work by myself or with teams?",
